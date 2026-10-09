@@ -1,0 +1,12 @@
+data: 
+  root: "Italian Parkinson's Voice and speech"
+  groups: ["Italian Parkinson's Voice and speech/28 People with Parkinson's disease","Italian Parkinson's Voice and speech/22 Elderly Healthy Control"]
+  target_sr: 16_000
+  tasks: "all"
+
+splits:
+  type: "group_kfold"
+  n_splits: 5
+  seed: 42
+  group_by: "speaker"
+  
