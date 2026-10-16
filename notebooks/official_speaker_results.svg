@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="420">
+<rect width="100%" height="100%" fill="white"/>
+<text x="70" y="32" font-size="18" font-family="sans-serif">Official internal speaker-level results</text>
+<line x1="70" y1="350.0" x2="690" y2="350.0" stroke="#dddddd"/>
+<text x="8" y="354.0" font-size="12" font-family="sans-serif">0</text>
+<line x1="70" y1="294.0" x2="690" y2="294.0" stroke="#dddddd"/>
+<text x="8" y="298.0" font-size="12" font-family="sans-serif">20</text>
+<line x1="70" y1="238.0" x2="690" y2="238.0" stroke="#dddddd"/>
+<text x="8" y="242.0" font-size="12" font-family="sans-serif">40</text>
+<line x1="70" y1="182.0" x2="690" y2="182.0" stroke="#dddddd"/>
+<text x="8" y="186.0" font-size="12" font-family="sans-serif">60</text>
+<line x1="70" y1="126.0" x2="690" y2="126.0" stroke="#dddddd"/>
+<text x="8" y="130.0" font-size="12" font-family="sans-serif">80</text>
+<line x1="70" y1="70.0" x2="690" y2="70.0" stroke="#dddddd"/>
+<text x="8" y="74.0" font-size="12" font-family="sans-serif">100</text>
+<rect x="88.0" y="75.71428571428572" width="24" height="274.2857142857143" fill="#1f4e79"/>
+<rect x="116.0" y="75.71428571428572" width="24" height="274.2857142857143" fill="#5b8e7d"/>
+<rect x="144.0" y="70.0" width="24" height="280.0" fill="#b08968"/>
+<text x="112.0" y="374" text-anchor="middle" font-size="12" font-family="sans-serif">f1</text>
+<rect x="212.0" y="81.19999999999999" width="24" height="268.8" fill="#1f4e79"/>
+<rect x="240.0" y="81.19999999999999" width="24" height="268.8" fill="#5b8e7d"/>
+<rect x="268.0" y="70.0" width="24" height="280.0" fill="#b08968"/>
+<text x="236.0" y="374" text-anchor="middle" font-size="12" font-family="sans-serif">recall</text>
+<rect x="336.0" y="70.0" width="24" height="280.0" fill="#1f4e79"/>
+<rect x="364.0" y="70.0" width="24" height="280.0" fill="#5b8e7d"/>
+<rect x="392.0" y="70.0" width="24" height="280.0" fill="#b08968"/>
+<text x="360.0" y="374" text-anchor="middle" font-size="12" font-family="sans-serif">specificity</text>
+<rect x="460.0" y="70.0" width="24" height="280.0" fill="#1f4e79"/>
+<rect x="488.0" y="70.0" width="24" height="280.0" fill="#5b8e7d"/>
+<rect x="516.0" y="70.0" width="24" height="280.0" fill="#b08968"/>
+<text x="484.0" y="374" text-anchor="middle" font-size="12" font-family="sans-serif">precision</text>
+<rect x="584.0" y="76.08695652173913" width="24" height="273.9130434782609" fill="#1f4e79"/>
+<rect x="612.0" y="76.51162790697674" width="24" height="273.48837209302326" fill="#5b8e7d"/>
+<rect x="640.0" y="70.0" width="24" height="280.0" fill="#b08968"/>
+<text x="608.0" y="374" text-anchor="middle" font-size="12" font-family="sans-serif">accuracy</text>
+<rect x="70" y="390" width="14" height="14" fill="#1f4e79"/>
+<text x="90" y="402" font-size="12" font-family="sans-serif">Main</text>
+<rect x="290" y="390" width="14" height="14" fill="#5b8e7d"/>
+<text x="310" y="402" font-size="12" font-family="sans-serif">No flagged controls</text>
+<rect x="510" y="390" width="14" height="14" fill="#b08968"/>
+<text x="530" y="402" font-size="12" font-family="sans-serif">Native 16 kHz</text>
+</svg>

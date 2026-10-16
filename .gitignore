@@ -1,1 +1,8 @@
 .env
+.venv/
+__pycache__/
+*.pyc
+data/
+artifacts/
+Italian Parkinson's Voice and speech/
+Italian Parkinson's Voice and speech.zip

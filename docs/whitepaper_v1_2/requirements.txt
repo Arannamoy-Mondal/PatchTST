@@ -1,0 +1,5 @@
+# Report-only plotting packages, used with the existing project environment.
+matplotlib==3.10.8
+plotly==6.5.2
+# Match the project's numerical environment when installing to a separate target.
+numpy==2.4.6

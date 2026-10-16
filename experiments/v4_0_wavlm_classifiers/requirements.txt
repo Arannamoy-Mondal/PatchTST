@@ -1,0 +1,2 @@
+# Install into an isolated target; keep the project's CPU PyTorch unchanged.
+xgboost-cpu==3.1.1

@@ -1,0 +1,213 @@
+schema_version: 1
+version_scope: experiments
+registration: retrospective_v1_to_v3_and_prospective_v4
+current_pipeline: v2.1
+current_audit: v2.0-audit.2
+latest_experiment: v4.0
+latest_experiment_audit: v4.0-audit.1
+
+versions:
+  v1.0:
+    kind: trained_pipeline
+    title: Original Arannamoy implementation
+    status: historical
+    parent: null
+    run_directory: artifacts/runs/main
+    source_snapshot: artifacts/runs/20261012T182626Z_f-all_legacy-source
+    feature_specification: docs/experiment_versions.md#v10-original-pipeline
+    main_speakers: 47
+    feature_family: log_mel_power_spectrogram
+    feature_dimensions: [64, 400]
+    artifacts:
+      - path: artifacts/runs/main/config.json
+        sha256: 92a911d066201d4d7be743fdba4ddca3786b181ff596918182ae96827cae1aad
+      - path: artifacts/runs/main/metrics.json
+        sha256: 7dcdd28e1bfa190b44f7fc105a4bc5b6ee183980797cdf9aa35fad38e1bd5049
+      - path: artifacts/runs/main/speaker_scores.csv
+        sha256: 10b665334efbdf1b539dfcffb90a4be7961f0f77bc96718314c89261b640b029
+      - path: artifacts/runs/20261012T182626Z_f-all_legacy-source/src/patchtst/model/patchtst.py
+        sha256: aac3654ca33a9447790bd5877654771434199e7ffa021d8fb72c6256356eb828
+
+  v2.0:
+    kind: trained_pipeline_comparison
+    title: Corrected shared-fold three-member comparison
+    status: current_internal_result
+    parent: v1.0
+    run_directory: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1
+    source_snapshot: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/source
+    feature_specification: docs/experiment_versions.md#v20-corrected-pipeline
+    main_speakers: 46
+    native16k_speakers: 39
+    members:
+      arannamoy:
+        feature_family: log_mel_power_spectrogram
+        feature_dimensions: [64, 400]
+        feature_version: fixed-db-v2
+      mohibur:
+        feature_family: frozen_whisper_large_v3_embeddings
+        feature_dimensions: [1280]
+      osman:
+        feature_family: pitch_jitter_shimmer_mfcc_summaries
+        numeric_features: 30
+        categorical_feature: vowel_identity
+    interpretation: Revised internal evaluation; acquisition-related confounding remains unresolved.
+    artifacts:
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/config.yaml
+        sha256: 417e82b36120a5e7696931d72c3099d912b4b933e5a4106dc9e7a85335687a00
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/protocol.json
+        sha256: 5127c90c5b2c4881b7c5b093545994fa83f81c4d1b9407ccbd903ae60bacb1ad
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/summary.json
+        sha256: ee9871efdbdb42bf4069f31084d5b1774fb1d83b6925f16c00c1bc30d91f9379
+
+  v2.0-audit.1:
+    kind: diagnostic_audit
+    title: Temporal ablations, recording-cue controls, and shuffled-label retraining
+    status: completed
+    parent: v2.0
+    run_directory: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/diagnostics/high_score_audit
+    feature_specification: docs/experiment_versions.md#v20-audit1-high-score-investigation
+    original_checkpoints_reused: true
+    additional_training: Logistic diagnostic controls and one five-fold PatchTST label permutation
+    replaces_primary_result: false
+    artifacts:
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/diagnostics/high_score_audit/control_metrics.csv
+        sha256: 8ceea55261fb6373d111c60be886789116478411066f3ba51108d22767d60270
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/diagnostics/high_score_audit/patchtst_inference_ablations.json
+        sha256: 940428a08128b18e9ec822810e331488d8c48857d1875b50ab5ee8c5b6e79f73
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/diagnostics/high_score_audit/patchtst_label_permutation/metrics.json
+        sha256: 17143d40767b11fb0486f1ac261dc953791499ced466db0da6d7e6d4333129ce
+      - path: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1/diagnostics/high_score_audit/audit_provenance.json
+        sha256: de1ca09f9b8a790ec42851e0d22d958bd4cf0bb9327b38606fd1c1726a5f7973
+
+  v2.0-audit.2:
+    kind: diagnostic_audit
+    title: Raw-audio replay, high-score explanation, and publication assessment
+    status: completed_with_documented_numerical_check_resolution
+    parent: v2.0
+    previous_audit: v2.0-audit.1
+    run_directory: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167
+    source_snapshot: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/source
+    feature_specification: docs/experiment_versions.md#v20-audit2-publication-readiness-recheck
+    report: docs/publication_readiness_audit.md
+    original_checkpoints_reused: true
+    additional_training: Six existing fixed-C logistic diagnostic controls refitted on their original folds
+    replaces_primary_result: false
+    numerical_check_resolution: Initial feature tolerance failure preserved; all 773 arrays match bitwise with one BLAS thread and all ten raw-audio PatchTST replays pass
+    artifacts:
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/recheck_publication.py
+        sha256: 2167119cc167c9de0e7ad068c3912a072cc566a8aa25fe5ed171f49b17c639e2
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/resolve_feature_rounding.py
+        sha256: ca7a143f2ddc15a80cdb960772ab9fa6bb0cac1f952253ea0594e78fa699c6e7
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/provenance.json
+        sha256: f30105cd1d56ecade7c2c3ee63d8dd5129b0b1ca592c210c27223c00613c1731
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/model_replay.json
+        sha256: b7373d2fce6dc72b72be9b307a42290a6ea197a5d9a11c0675099b02a1ec793a
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/findings.json
+        sha256: 6bde8e5b45228137c0706d7f59fccd6e5c00db880e13ea19a58318775be032ce
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/feature_rounding_resolution.json
+        sha256: a95ce8a7e5cda6d96dd4d6f1ec320f3cdd36c79d9f669f9eb94c78990cb73b5b
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/control_replays.json
+        sha256: 84de60353fc2d255f43021776cea092b4179e53410c80fd45d41dfc613cde116
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/aggregation_checks.json
+        sha256: eba20521db950e7e48540b813c2342ad949b491719a99db07b63adc83024563b
+      - path: artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/REPORT.md
+        sha256: 3423c80710b5d7b8b53199a0bed6d4533e28f86059063deca55e8ff5eb9b852f
+
+  v2.1:
+    kind: readable_code_rewrite
+    title: Human-readable Python implementation of v2.0
+    status: current_code
+    parent: v2.0
+    run_directory: artifacts/runs/20261012T183328Z_f-all_cead14cc32f1
+    source_snapshot: src/patchtst/v2_0_frozen
+    feature_specification: docs/experiment_versions.md#v21-readable-python-rewrite
+    retrained: false
+    behavior_checked_against: v2.0
+    interpretation: Code-readability release only; quoted trained results remain v2.0.
+
+  v3.0:
+    kind: new_transformer_experiment
+    title: Time-patch transformer compared with the static-spectrum baseline
+    status: completed_internal_experiment
+    parent: v2.0
+    code_directory: experiments/v3_0_time_patch_transformer
+    run_directory: artifacts/runs/20261012T210954Z_v3.0_743b9c95f323
+    feature_specification: docs/experiment_versions.md#v30-time-patch-transformer
+    replaces_v2_0_result: false
+    main_speakers: 46
+    native16k_speakers: 39
+    threshold: 0.5
+    parameters: 47105
+    variants:
+      - raw_logmel
+      - time_centered_logmel
+    artifacts:
+      - path: experiments/v3_0_time_patch_transformer/model.py
+        sha256: 35d68056f8f4d8094cb5f9532a8582b381074080d71223aea3e342b442b36bf8
+      - path: experiments/v3_0_time_patch_transformer/run.py
+        sha256: 5f1aa59926fdc0f710179e99107ccb8b65727fcf61dae8416d6bb9d7283ca120
+      - path: artifacts/runs/20261012T210954Z_v3.0_743b9c95f323/settings.json
+        sha256: e082388a35a5dc30293cf40a5b24131d73c3fc358247e0db9e34391e29a5206d
+      - path: artifacts/runs/20261012T210954Z_v3.0_743b9c95f323/summary.json
+        sha256: 3577746e4c563bf40b67604bf546aa2d4e65058be67fccb62d9da9444c433728
+
+  v4.0:
+    kind: proposal_wavlm_classifier_comparison
+    title: Frozen WavLM-large with logistic regression, Random Forest and XGBoost
+    status: completed_with_documented_scaler_check_resolution
+    parent: v2.0
+    code_directory: experiments/v4_0_wavlm_classifiers
+    run_directory: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942
+    source_snapshot: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/source
+    interrupted_attempt: artifacts/runs/20261014T184657Z_v4.0_39701f53f615
+    interrupted_attempt_reason: Synthetic integration caught an XGBoost wrapper serialization incompatibility before real classifier training; native booster export corrected in the new source snapshot
+    feature_specification: docs/experiment_versions.md#v40-wavlm-proposal-experiment
+    replaces_v2_0_result: false
+    main_speakers: 46
+    native16k_speakers: 39
+    feature_family: frozen_wavlm_large_embeddings
+    feature_dimensions: [1024]
+    pretrained_revision: c1423ed94bb01d80a3f5ce5bc39f6026a0f4828c
+    selection_metric: training_only_inner_speaker_auroc
+    threshold: 0.5
+    conditional_fine_tuning: Upper two or four layers only when training-side baseline AUROC is below 0.80
+    fine_tuning_triggered_folds: 0
+    verification_audit: v4.0-audit.1
+    results: docs/v4_results.md
+    report: docs/wavlm_v4_0_technical_report.pdf
+    report_source: docs/wavlm_v4_0_report
+    interpretation: Revised internal experiment; recording-condition confounding remains unresolved.
+    artifacts:
+      - path: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/config.yaml
+        sha256: 8bd1ff7086e1db21bd9cc55f34f40ed1fa80aa02b0b7ed8ba422fc4637c225f4
+      - path: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/settings.json
+        sha256: c372ff7bf16fc7087e53263c88bfc76d09281de19ec33ff06713f17f37fb2d5c
+      - path: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/protocol.json
+        sha256: 84382f979bf971f5723a542a0132b438d369ae002ef8f57c5a6d59721e6c3318
+      - path: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/summary.json
+        sha256: 6ff310e41a7b858fffa66de1e7128bd730951bc88f1fa49212708c73a6a33076
+      - path: docs/wavlm_v4_0_technical_report.pdf
+        sha256: b440f20c3397df3293d6e47f17e61ecad8df9efbf35f96a113b504240c60cc91
+
+  v4.0-audit.1:
+    kind: checker_dtype_resolution
+    title: Reproduce sklearn's input-weight cast and replay the unchanged WavLM classifiers
+    status: completed
+    parent: v4.0
+    run_directory: artifacts/runs/20261014T194536Z_v4.0-audit.1_9a910f079ae0
+    source_snapshot: artifacts/runs/20261014T194536Z_v4.0-audit.1_9a910f079ae0/source
+    feature_specification: docs/experiment_versions.md#v40-audit1-scaler-check-resolution
+    original_models_reused: true
+    retrained: false
+    replaces_primary_result: false
+    initial_failure_preserved: artifacts/runs/20261014T191654Z_v4.0_eb438e63b942/replay_checks.json
+    resolution: Scaler check now reproduces sklearn's float32 weight cast followed by float64 accumulation; tolerances and model predictions are unchanged
+    saved_classifier_replays: 30
+    conditional_branch_replays: 10
+    fresh_embedding_examples: 2
+    raw_recordings_rehashed: 773
+    artifacts:
+      - path: artifacts/runs/20261014T194536Z_v4.0-audit.1_9a910f079ae0/resolution.json
+        sha256: f69e5f8453be24c4fab05238a6196c67976eb34c8553b2025238c678bfe42df4
+      - path: artifacts/runs/20261014T194536Z_v4.0-audit.1_9a910f079ae0/resolved_replay_checks.json
+        sha256: e1f75f4e6fd801ce4f10f7710e346714c0ba34676aa604c95c6b790586aa26c9

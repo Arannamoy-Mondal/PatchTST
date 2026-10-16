@@ -1,0 +1,112 @@
+{
+  "scope": "v2.0 / arannamoy / main",
+  "unique_oof_speakers": 46,
+  "recordings": 773,
+  "threshold": 0.5,
+  "fold_checks_recomputed_by_report_builder": [
+    {
+      "fold": 0,
+      "outer_train_speakers": 36,
+      "inner_train_speakers": 28,
+      "inner_validation_speakers": 8,
+      "test_speakers": 10,
+      "test_recordings": 192,
+      "speaker_overlap": 0,
+      "pooled_rows_match_held_out_fold": true,
+      "maximum_aggregation_probability_difference": 4.377861717586029e-08,
+      "selected_epochs": 3,
+      "passed": true
+    },
+    {
+      "fold": 1,
+      "outer_train_speakers": 37,
+      "inner_train_speakers": 29,
+      "inner_validation_speakers": 8,
+      "test_speakers": 9,
+      "test_recordings": 144,
+      "speaker_overlap": 0,
+      "pooled_rows_match_held_out_fold": true,
+      "maximum_aggregation_probability_difference": 4.1025238983749546e-08,
+      "selected_epochs": 10,
+      "passed": true
+    },
+    {
+      "fold": 2,
+      "outer_train_speakers": 37,
+      "inner_train_speakers": 29,
+      "inner_validation_speakers": 8,
+      "test_speakers": 9,
+      "test_recordings": 135,
+      "speaker_overlap": 0,
+      "pooled_rows_match_held_out_fold": true,
+      "maximum_aggregation_probability_difference": 6.816279007892945e-08,
+      "selected_epochs": 14,
+      "passed": true
+    },
+    {
+      "fold": 3,
+      "outer_train_speakers": 37,
+      "inner_train_speakers": 29,
+      "inner_validation_speakers": 8,
+      "test_speakers": 9,
+      "test_recordings": 142,
+      "speaker_overlap": 0,
+      "pooled_rows_match_held_out_fold": true,
+      "maximum_aggregation_probability_difference": 4.4423728806641805e-08,
+      "selected_epochs": 16,
+      "passed": true
+    },
+    {
+      "fold": 4,
+      "outer_train_speakers": 37,
+      "inner_train_speakers": 29,
+      "inner_validation_speakers": 8,
+      "test_speakers": 9,
+      "test_recordings": 160,
+      "speaker_overlap": 0,
+      "pooled_rows_match_held_out_fold": true,
+      "maximum_aggregation_probability_difference": 2.1583764608923417e-08,
+      "selected_epochs": 20,
+      "passed": true
+    }
+  ],
+  "prior_raw_audio_evidence": "artifacts/runs/20261012T215648Z_v2.0-audit.2_2167119cc167/feature_rounding_resolution.json",
+  "prior_main_raw_audio_replays": [
+    {
+      "scenario": "main",
+      "fold": 0,
+      "maximum_probability_difference": 2.8849029498623224e-08,
+      "decisions_match": true,
+      "passed": true
+    },
+    {
+      "scenario": "main",
+      "fold": 1,
+      "maximum_probability_difference": 2.4882507276835497e-08,
+      "decisions_match": true,
+      "passed": true
+    },
+    {
+      "scenario": "main",
+      "fold": 2,
+      "maximum_probability_difference": 2.316284175574168e-08,
+      "decisions_match": true,
+      "passed": true
+    },
+    {
+      "scenario": "main",
+      "fold": 3,
+      "maximum_probability_difference": 4.200592096381683e-09,
+      "decisions_match": true,
+      "passed": true
+    },
+    {
+      "scenario": "main",
+      "fold": 4,
+      "maximum_probability_difference": 2.797393794384817e-08,
+      "decisions_match": true,
+      "passed": true
+    }
+  ],
+  "interpretation": "Speaker-disjoint and leakage-checked; recording-condition confounding remains unresolved."
+}

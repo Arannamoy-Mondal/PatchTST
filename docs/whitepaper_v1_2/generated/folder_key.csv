@@ -1,0 +1,50 @@
+folder_id,folder,speaker_id,label
+D01,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/AGNESE P,EHC_APGANRET55F,0
+D02,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/ANGELA C,EHC_ACNAGRER49F,0
+D03,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/ANGELA G,EHC_AGNIGNEE54F,0
+D04,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/ANTONIETTA P,EHC_APNITNOT56F,0
+D05,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/ANTONIO C,EHC_ACNUTCOC40M,0
+D06,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/BRIGIDA C,EHC_BCRAISGS48F,0
+D07,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/GILDA C,EHC_GCIALSDA52F,0
+D08,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/GIOVANNA G,EHC_GGIAORVG47F,0
+D09,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/GIOVANNI B,EHC_GBIAORVI48M,0
+D10,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/GRAZIA G,EHC_GGRIAUZL45F,0
+D11,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/LEONARDA F,EHC_LFEIOONR57F,0
+D12,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/LISCO G,EHC_GLIIUSSC57M,0
+D13,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/LUIGI P,EHC_LPUUITGI41M,0
+D14,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/MARIACRISTINA P,EHC_MPAERRIR56F,0
+D15,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/MICHELE G,EHC_MGIACTHT49M,0
+D16,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/NICOLA P,EHC_NPIICEOR42M,0
+D17,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/PORCELLI A,EHC_APNOTROC49M,0
+D18,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/SUMMO L,EHC_LSUUIMGM48F,0
+D19,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/TERESA M,EHC_TMEIRAEC54F,0
+D20,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/VITO A,EHC_VAILTFOO49M,0
+D21,Italian Parkinson's Voice and speech/22 Elderly Healthy Control/VITO L,EHC_VLIATFOO55M,0
+D22,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/1-5/Domenico C,PD_CDAOPMOE67M,1
+D23,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/1-5/Felicetta C,PD_CFAERLEI54F,1
+D24,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/1-5/Leonarda L,PD_LLOEROUN56F,1
+D25,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/1-5/Lucia R,PD_RLOUSCSI77F,1
+D26,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/1-5/Roberto R,PD_roberto_r_49M,1
+D27,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Anna B,PD_ABNINSAC46F,1
+D28,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Michele C,PD_MCIICLHL46M,1
+D29,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Nicola S,PD_nicola_s_44M,1
+D30,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Roberto L,PD_RLOABREE42M,1
+D31,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Roberto R,PD_roberto_r_49M,1
+D32,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/11-16/Vito S,PD_VSIPTIOZ46M,1
+D33,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Antonia G,PD_AGNUTGOL52F,1
+D34,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Daria L,PD_DLAARCII37F,1
+D35,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Giovanni M,PD_GMIAOSVI44M,1
+D36,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Giovanni N,PD_GNIEOGVL47M,1
+D37,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Giulia L,PD_GLIAUDLO50F,1
+D38,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Giulia P,PD_GPIUUGLL63F,1
+D39,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Giustina M,PD_GMIAUSST39F,1
+D40,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Mario B,PD_MBAUROIN45M,1
+D41,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Nicola M,PD_NMIICNOO52M,1
+D42,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Nicolò C,PD_NCIICAOC52M,1
+D43,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Vito L,PD_VLIATOP47M,1
+D44,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/17-28/Vito S,PD_VSIOTLOP47M,1
+D45,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/6-10/Luigi B,PD_LBUAIRGO52M,1
+D46,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/6-10/Nicola S,PD_nicola_s_44M,1
+D47,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/6-10/Saverio S,PD_SSACVHEI61M,1
+D48,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/6-10/Ugo B,PD_UBGUOT_T40M,1
+D49,Italian Parkinson's Voice and speech/28 People with Parkinson's disease/6-10/Vito S,PD_VSIPTIOZ46M,1

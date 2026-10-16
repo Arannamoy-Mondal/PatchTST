@@ -1,12 +1,71 @@
-data: 
+data:
   root: "Italian Parkinson's Voice and speech"
-  groups: ["Italian Parkinson's Voice and speech/28 People with Parkinson's disease","Italian Parkinson's Voice and speech/22 Elderly Healthy Control"]
-  target_sr: 16_000
-  tasks: "all"
+  groups:
+    - "Italian Parkinson's Voice and speech/28 People with Parkinson's disease"
+    - "Italian Parkinson's Voice and speech/22 Elderly Healthy Control"
+  target_sr: 16000
+  tasks: all
+  merge_probable_speakers: true
+
+features:
+  n_mels: 64
+  n_fft: 512
+  win_length: 400
+  hop_length: 160
+  window_sec: 4.0
+  hop_sec: 2.0
+  max_windows_per_file: 8
+  db_ref: 1.0
+  amin: 0.0000000001
+  top_db: null
+  version: fixed-db-v2
+
+model:
+  patch_len: 16
+  stride: 16
+  d_model: 16
+  n_heads: 4
+  n_layers: 1
+  dropout: 0.2
+  db_offset: 40.0
+  db_scale: 40.0
+
+train:
+  epochs: 20
+  batch_size: 16
+  lr: 0.001
+  patience: 5
+  weight_decay: 0.0001
+  validation_fraction: 0.2
+  threads: 4
+  threshold: 0.5
 
 splits:
-  type: "group_kfold"
+  type: stratified_group_kfold
   n_splits: 5
   seed: 42
-  group_by: "speaker"
-  
+  group_by: speaker
+
+outputs:
+  cache_root: data/corrected_features
+  run_root: artifacts/runs
+
+comparison:
+  cohort: common_available_speakers
+  inner_folds: 3
+  c_grid: [0.01, 0.1, 1.0, 10.0]
+  patchtst_tasks: all
+  acoustic_tasks: [VA1, VA2, VE1, VE2, VI1, VI2, VO1, VO2, VU1, VU2]
+  whisper_tasks: [B1, B2]
+  whisper_model: openai/whisper-large-v3
+  whisper_revision: 06f233fe06e710322aca913c1bc4249a0d71fce1
+  whisper_seconds: 30
+  whisper_dtype: float32
+  acoustic_n_mfcc: 13
+  acoustic_n_mels: 128
+  acoustic_n_fft: 512
+  acoustic_hop_length: 160
+  acoustic_trim_db: 30
+  acoustic_margin_seconds: 0.2
+  pitch_floor: 75
+  pitch_ceiling: 500

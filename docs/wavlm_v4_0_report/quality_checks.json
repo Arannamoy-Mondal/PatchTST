@@ -1,0 +1,12 @@
+{
+  "printed_recordings_checked": 773,
+  "zip_partition_csvs": 80,
+  "offline_filter_combinations": 80,
+  "browser_errors": [],
+  "pdf_pages": 40,
+  "outside_words": 0,
+  "non_gray_pages": [],
+  "rgb_renderer": "Poppler pdftoppm; exact channel equality, no relaxed tolerance",
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,7 @@
+{
+  "auroc": 1.0,
+  "average_precision": 1.0000000000000002,
+  "pd_fraction": 0.5434782608695652,
+  "threshold": 0.5,
+  "interpretation": "Descriptive pooled OOF ranking; no threshold selection or external confidence interval."
+}
